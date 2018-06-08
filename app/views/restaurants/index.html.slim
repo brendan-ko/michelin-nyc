@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title Whatever
+  body
+    h1 Restaurant List
+
+    - if @restaurants.length > 0
+      h2 woo restaurants
+      table#restaurants
+        tr
+          td.restaurant-name.restaurant-header hiyo
+          td.restaurant-address.restaurant-header yoyo
+          td.restaurant-description.restaurant-header ayyoo
+        - for restaurant in @restaurants
+          tr
+            td.restaurant-name = restaurant.name
+            td.restaurant-address = restaurant.address
+            td.restaurant-description = restaurant.description
+            
