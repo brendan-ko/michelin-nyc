@@ -32,6 +32,7 @@ restaurant2 = Restaurant.create(
   name: "A Voce Columbus",
   address: "10 Columbus Cir, New York, NY 10019",
   description: "Polished Italian eatery in a sleek Time Warner Center venue that overlooks Central Park. Closed",
+  closed_status: true,
   stars: {
     2007 => 1,
     2008 => 1,
@@ -47,6 +48,7 @@ restaurant3 = Restaurant.create(
   name: "A Voce Madison",
   address: "41 Madison Ave, New York, NY 10010",
   description: "Modern preparations of traditional Italian meat, fish & pasta dishes, with a fixed-price option. Closed",
+  closed_status: true,
   stars: {
     2012 => 1,
     2013 => 1,
@@ -59,6 +61,7 @@ restaurant4 = Restaurant.create(
   name: "Adour",
   address: "2 E 55th St, New York, NY 10022",
   description: "An upscale, gourmet boîte and meeting place for the well-heeled. Closed",
+  closed_status: true,
   stars: {
     2009 => 2,
     2010 => 1,
