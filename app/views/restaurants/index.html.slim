@@ -12,9 +12,9 @@ html
       h3 Current year is #{curr_year}!
       table#restaurants
         tr
-          td.restaurant-name.restaurant-header hiyo
-          td.restaurant-address.restaurant-header yoyo
-          td.restaurant-description.restaurant-header ayyoo
+          td.restaurant-name.restaurant-header Restaurant Name
+          td.restaurant-address.restaurant-header Address
+          td.restaurant-description.restaurant-header Description
           - for year in (start_year..curr_year)
             td.restaurant-header class="#{year}" #{year}
         - for restaurant in @restaurants
@@ -22,4 +22,5 @@ html
             td.restaurant-name = restaurant.name
             td.restaurant-address = restaurant.address
             td.restaurant-description = restaurant.description
-            
+            - for year in (start_year..curr_year)
+              td class="#{year}" #{restaurant.stars["#{year}"]}
