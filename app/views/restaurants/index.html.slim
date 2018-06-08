@@ -7,11 +7,16 @@ html
 
     - if @restaurants.length > 0
       h2 woo restaurants
+      - start_year = 2006
+      - curr_year = Time.now.year
+      h3 Current year is #{curr_year}!
       table#restaurants
         tr
           td.restaurant-name.restaurant-header hiyo
           td.restaurant-address.restaurant-header yoyo
           td.restaurant-description.restaurant-header ayyoo
+          - for year in (start_year..curr_year)
+            td.restaurant-header class="#{year}" #{year}
         - for restaurant in @restaurants
           tr
             td.restaurant-name = restaurant.name
