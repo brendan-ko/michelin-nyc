@@ -9,6 +9,7 @@ html
     / div.test-jsx
     /   = react_component "testJSX",
     /                     :text => "Hallo Moto"
+    h2 React-Rails table below
     div.restaurant-table-div
       = react_component "RestaurantTable",
                         :restaurants => @restaurants,
@@ -16,7 +17,7 @@ html
                         :currYear => Time.now.year
     - start_year = 2006
     - curr_year = Time.now.year
-    h3 Current year is #{curr_year}!
+    h3 Slim view table below
     table#restaurants
       tr
         td.restaurant-name.restaurant-header Restaurant Name
