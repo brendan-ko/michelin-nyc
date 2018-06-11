@@ -3,7 +3,6 @@ import React from 'react'
 class RestaurantRow extends React.Component {
   constructor(props) {
     super(props);
-    // debugger
     
     this.state = {
       //include selectionState in table or each row?

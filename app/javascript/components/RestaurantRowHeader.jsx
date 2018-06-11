@@ -2,7 +2,6 @@ import React from 'react'
 
 const RestaurantRowHeader = (props) => {
   const { yearRange } = props;
-  debugger
   return (
     <tr className={`restaurant-row-header`}>
       <td className='restaurant-name'>Restaurant Name</td>

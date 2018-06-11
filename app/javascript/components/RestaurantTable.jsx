@@ -15,12 +15,20 @@ class RestaurantTable extends React.Component {
     this.handleSelection = this.handleSelection.bind(this);
   }
   handleSelection(e) {
-    this.setState({
-      selectedRow: e.target.parentElement
-    });
+    if (e.target.parentElement === this.state.selectedRow) {
+      this.setState( {
+        selectedRow: null
+      });
+    }
+    else {
+      this.setState({
+        selectedRow: e.target.parentElement
+      });
+    }
   }
 
   render() {
+    console.log(this.state.selectedRow);
     const { startYear, currYear } = this.props;
     const yearRange = rangeArray(startYear, currYear);
     return (
