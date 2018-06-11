@@ -5,12 +5,10 @@ html
     = javascript_pack_tag 'application'
   body
     h1 Restaurant List
-    div.react-hopefully
-      = react_component "HelloWorld",
-                        :greeting => "Hello"
-    div.test-jsx
-      = react_component "testJSX",
-                        :text => "Hallo Moto"
+    / test component for functional react component
+    / div.test-jsx
+    /   = react_component "testJSX",
+    /                     :text => "Hallo Moto"
     div.restaurant-table-div
       = react_component "RestaurantTable",
                         :restaurants => @restaurants,
