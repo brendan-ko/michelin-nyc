@@ -5,3 +5,5 @@ export const rangeArray = (startYear, currYear) => {
   }
   return yearArr;
 };
+
+//non-function variables

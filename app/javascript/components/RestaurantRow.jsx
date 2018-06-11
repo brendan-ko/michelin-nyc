@@ -18,11 +18,11 @@ class RestaurantRow extends React.Component {
       <tr className={`restaurant-row ${closedClass}`}>
         <td className='restaurant-name'>{name}</td>
         {yearRange.map( (year) => {
-          return(
-            <td key={`${year}${id}`}>
-              {stars[`${year}`]}
-            </td>
-          )
+          return <td
+            className={`restauarant-stars ${year}`}
+            key={`${name}${id}${year}`}>
+            {stars[`${year}`]}
+          </td>
         })}
         <td className='restaurant-address'>{address}</td>
         <td className='restaurant-description'>{description}</td>
