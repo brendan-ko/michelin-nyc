@@ -18,6 +18,20 @@ class RestaurantTable extends React.Component {
     return (
       <table>
         <tbody>
+          <tr
+          key='restaurant-table-header'
+          className='restaurant-table-header'>
+            <td>Restaurant Name</td>
+            {yearRange.map( (year) => {
+              return <td
+                className={`restauarant-stars ${year} header`}
+                key={`${name}header${year}`}>
+                  {year}
+              </td>
+            })}
+            <td>Address</td>
+            <td>Description</td>
+          </tr>
           {this.state.restaurants.map( (restaurant) => {
             // const {id, name, address, description, stars, closed_status} = restaurant;
             return <RestaurantRow 
