@@ -1,6 +1,7 @@
 import React from 'react';
 import RestaurantRow from './RestaurantRow';
 import RestaurantRowHeader from './RestaurantRowHeader';
+import RestaurantBlurbBox from './RestaurantBlurbBox';
 import {rangeArray} from './util_functions';
 class RestaurantTable extends React.Component {
   constructor(props) {
@@ -37,11 +38,13 @@ class RestaurantTable extends React.Component {
           <RestaurantRowHeader yearRange={yearRange}/>
           {this.state.restaurants.map( (restaurant) => {
             // const {id, name, address, description, stars, closed_status} = restaurant;
-            return <RestaurantRow 
+            return [<RestaurantRow 
               key={restaurant.id}
               restaurant={restaurant}
               yearRange={yearRange}
-            />;
+            />,
+            <RestaurantBlurbBox/>
+            ];
           })}
         </tbody>
       </table>

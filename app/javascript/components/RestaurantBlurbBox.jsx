@@ -2,7 +2,11 @@ import React from 'react';
 
 const RestaurantBlurbBox = (props) => {
   return (
-    <div>AYOOO</div>
+    <tr>
+      <td>
+        AYOOO
+      </td>
+    </tr>
   )
 }
 
