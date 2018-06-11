@@ -1,10 +1,11 @@
 import React from 'react';
 import RestaurantRow from './RestaurantRow';
+import {rangeArray} from './util_functions';
 class RestaurantTable extends React.Component {
   constructor(props) {
     super(props);
-    //include selectionState in table or each row?
     this.state = {
+      //include selectionState in table or each row?
       restaurants: props.restaurants,
       startYear: props.startYear,
       currYear: props.currYear,
@@ -12,6 +13,8 @@ class RestaurantTable extends React.Component {
   }
 
   render() {
+    const { startYear, currYear } = this.props;
+    const yearRange = rangeArray(startYear, currYear);
     return (
       <table>
         <tbody>
@@ -20,6 +23,7 @@ class RestaurantTable extends React.Component {
             return <RestaurantRow 
               key={restaurant.id}
               restaurant={restaurant}
+              yearRange={yearRange}
             />;
           })}
         </tbody>

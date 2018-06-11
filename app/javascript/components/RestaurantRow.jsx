@@ -3,22 +3,24 @@ import React from 'react'
 class RestaurantRow extends React.Component {
   constructor(props) {
     super(props);
-    //include selectionState in table or each row?
     // debugger
     
     this.state = {
-      
+      //include selectionState in table or each row?
     }
   }
 
   render() {
-    const { id, name, address, description, stars, closed_status } = this.props.restaurant;
+    const {yearRange} = this.props;
+    const {id, name, address, description, stars, closed_status} = this.props.restaurant;
     const closedClass = closed_status ? 'closed' : 'open';
     return(
       <tr className={`restaurant-row ${closedClass}`}>
-        <td>{name}</td>
-        <td>{address}</td>
-        <td>{description}</td>
+        <td className='restaurant-name'>{name}</td>
+        
+        <td className='restaurant-address'>{address}</td>
+        <td className='restaurant-description'>{description}</td>
+
       </tr>
     )
   }
