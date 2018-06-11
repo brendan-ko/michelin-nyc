@@ -2,9 +2,15 @@ doctype html
 html
   head
     title History of Michelin Starred Restaurants in NYC
+    = javascript_pack_tag 'application'
   body
     h1 Restaurant List
-
+    div.react-hopefully
+      = react_component "HelloWorld",
+                        :greeting => "Hello"
+    div.test-jsx
+      = react_component "testJSX",
+                        :text => "Hallo Moto"
     - start_year = 2006
     - curr_year = Time.now.year
     h3 Current year is #{curr_year}!
