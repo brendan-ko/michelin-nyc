@@ -14,7 +14,8 @@ class RestaurantRow extends React.Component {
     const {id, name, address, description, stars, closed_status} = this.props.restaurant;
     const closedClass = closed_status ? 'closed' : 'open';
     return(
-      <tr className={`restaurant-row ${closedClass}`}>
+      <tr className={`restaurant-row ${closedClass}`}
+          id={`restaurant-row-${name}`}>
         <td className='restaurant-name'>{name}</td>
         {yearRange.map( (year) => {
           return <td

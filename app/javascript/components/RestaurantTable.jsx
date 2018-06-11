@@ -32,6 +32,7 @@ class RestaurantTable extends React.Component {
     console.log(this.state.selectedRow);
     const { startYear, currYear } = this.props;
     const yearRange = rangeArray(startYear, currYear);
+    const selectedBlurbId = this.state.selectedRow;
     return (
       <table onClick={this.handleSelection}>
         <tbody>
@@ -40,13 +41,11 @@ class RestaurantTable extends React.Component {
               // const {id, name, address, description, stars, closed_status} = restaurant;
               return [<RestaurantRow 
                 key={restaurant.id}
-                id={`restaurant-row-${restaurant.name}`}
                 restaurant={restaurant}
                 yearRange={yearRange}
               />,
               <RestaurantBlurbBox
                 key={`${restaurant.id}-blurb`}
-                id={`restaurant-row-${restaurant.name}-blurb`}
                 className={`restaurant-blurb`}
                 restaurant={restaurant}
               />
