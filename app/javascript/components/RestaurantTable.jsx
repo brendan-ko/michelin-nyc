@@ -36,15 +36,21 @@ class RestaurantTable extends React.Component {
       <table onClick={this.handleSelection}>
         <tbody>
           <RestaurantRowHeader yearRange={yearRange}/>
-          {this.state.restaurants.map( (restaurant) => {
-            // const {id, name, address, description, stars, closed_status} = restaurant;
-            return [<RestaurantRow 
-              key={restaurant.id}
-              restaurant={restaurant}
-              yearRange={yearRange}
-            />,
-            <RestaurantBlurbBox/>
-            ];
+            {this.state.restaurants.map( (restaurant) => {
+              // const {id, name, address, description, stars, closed_status} = restaurant;
+              return [<RestaurantRow 
+                key={restaurant.id}
+                id={`restaurant-row-${restaurant.name}`}
+                restaurant={restaurant}
+                yearRange={yearRange}
+              />,
+              <RestaurantBlurbBox
+                key={`${restaurant.id}-blurb`}
+                id={`restaurant-row-${restaurant.name}-blurb`}
+                className={`restaurant-blurb`}
+                restaurant={restaurant}
+              />
+              ];
           })}
         </tbody>
       </table>
