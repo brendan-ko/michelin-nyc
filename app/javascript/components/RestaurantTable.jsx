@@ -16,18 +16,9 @@ class RestaurantTable extends React.Component {
     this.handleSelection = this.handleSelection.bind(this);
   }
   handleSelection(e) {
-    debugger
-    if (rowParse(e.target) === this.state.selectedRow) {
-      this.setState( {
-        selectedRow: null
-      })
-    }
-    else {
-      this.setState( {
-        selectedRow: rowParse(e.target)
-      })
-    }
-    //else if the target is another row, change to the new row
+    this.setState({
+      selectedRow: rowParse(e.target, this.state.selectedRow)
+    })
   }
 
   render() {

@@ -20,14 +20,18 @@ export const starParse = (textInt) => {
   }
 }
 
-export const rowParse = (eTarget) => {
-  switch(eTarget.tagName) {
-    case "DIV":
-      return eTarget.parentElement.parentElement;
-    case "TD":
-      return eTarget.parentElement;
-    default:
-    return null;
+export const checkSameRow = (newRow, currRow) => {
+  if (newRow === currRow) return null;
+  else return newRow;
+}
+
+export const rowParse = (eTarget, currSelectedRow) => {
+  if (eTarget.tagName === "DIV" && eTarget.parentElement.parentElement.tagName === "TR") {
+    return checkSameRow(eTarget.parentElement.parentElement, currSelectedRow);
   }
+  else if (eTarget.tagName === "TD" && eTarget.parentElement.tagName === "TR") {
+    return checkSameRow(eTarget.parentElement, currSelectedRow);
+  }
+  else return currSelectedRow;
 }
 //non-function variables
