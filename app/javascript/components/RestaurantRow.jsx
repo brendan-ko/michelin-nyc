@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import StarsDiv from './StarsDiv';
 
 class RestaurantRow extends React.Component {
   constructor(props) {
@@ -21,7 +22,8 @@ class RestaurantRow extends React.Component {
           return <td
             className={`restauarant-stars ${year}`}
             key={`${name}${id}${year}`}>
-            {stars[`${year}`]}
+            <StarsDiv
+              stars={stars[`${year}`]}/>
           </td>
         })}
 

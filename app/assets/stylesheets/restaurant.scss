@@ -10,6 +10,10 @@ table {
   border-collapse: collapse;
 }
 
+.closed {
+  background-color: lightgrey;
+}
+
 .hidden {
   display: none;
 }
@@ -21,4 +25,32 @@ table {
 .blurb-box {
   display: flex;
   justify-content: space-around;
+}
+
+.one-star {
+  height: 20px;
+  width: 50px;
+  background: image-url("14px-Michelin-1.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.two-star {
+  height: 20px;
+  width: 50px;
+  background: image-url("28px-Michelin-2.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.three-star {
+  height: 20px;
+  width: 50px;
+  background: image-url("42px-Michelin-3.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.restaurant-name:hover {
+  background-color: skyblue;
 }

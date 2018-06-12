@@ -5,7 +5,7 @@ const BlurbBoxContent = (props) => {
   return (
     <div className='blurb-box'>
       <p>AYOOO</p>
-      {name}
+      <p>{name}</p>
     </div>
   )
 }
