@@ -12,8 +12,6 @@ const RestaurantRowHeader = (props) => {
           </td>
         )
       })}
-      <td className='restaurant-address'>Address</td>
-      <td className='restaurant-description'>Description</td>
 
     </tr>
   )

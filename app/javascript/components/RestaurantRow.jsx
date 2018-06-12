@@ -24,8 +24,6 @@ class RestaurantRow extends React.Component {
             {stars[`${year}`]}
           </td>
         })}
-        <td className='restaurant-address'>{address}</td>
-        <td className='restaurant-description'>{description}</td>
 
       </tr>
     )
