@@ -20,4 +20,14 @@ export const starParse = (textInt) => {
   }
 }
 
+export const rowParse = (eTarget) => {
+  switch(eTarget.tagName) {
+    case "DIV":
+      return eTarget.parentElement.parentElement;
+    case "TD":
+      return eTarget.parentElement;
+    default:
+    return null;
+  }
+}
 //non-function variables

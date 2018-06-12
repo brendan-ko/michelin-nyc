@@ -2,7 +2,7 @@ import React from 'react';
 import RestaurantRow from './RestaurantRow';
 import RestaurantRowHeader from './RestaurantRowHeader';
 import RestaurantBlurbBox from './RestaurantBlurbBox';
-import {rangeArray} from './util_functions';
+import {rangeArray, rowParse} from './util_functions';
 class RestaurantTable extends React.Component {
   constructor(props) {
     super(props);
@@ -16,16 +16,18 @@ class RestaurantTable extends React.Component {
     this.handleSelection = this.handleSelection.bind(this);
   }
   handleSelection(e) {
-    if (e.target.parentElement === this.state.selectedRow) {
+    debugger
+    if (rowParse(e.target) === this.state.selectedRow) {
       this.setState( {
         selectedRow: null
-      });
+      })
     }
     else {
-      this.setState({
-        selectedRow: e.target.parentElement
-      });
+      this.setState( {
+        selectedRow: rowParse(e.target)
+      })
     }
+    //else if the target is another row, change to the new row
   }
 
   render() {

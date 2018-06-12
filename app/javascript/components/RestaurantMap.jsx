@@ -22,7 +22,7 @@ class RestaurantMap extends React.Component {
   }
 
   renderMap() {
-    let mapOptions = { center: { lat: 40.745155, lng: -73.994102 }, zoom: 17 };
+    let mapOptions = { center: { lat: 40.745155, lng: -73.994102 }, zoom: 15 };
     let latlng;
     const address = this.props.restaurant.address;
     let geocoder = new google.maps.Geocoder();
@@ -31,7 +31,7 @@ class RestaurantMap extends React.Component {
         latlng = { lat: results[0].geometry.location.lat(), lng: results[0].geometry.location.lng() }
         mapOptions = {
           center: latlng,
-          zoom: 17
+          zoom: 15
         };
       }
       this.map = new google.maps.Map(this.mapNode, mapOptions);
