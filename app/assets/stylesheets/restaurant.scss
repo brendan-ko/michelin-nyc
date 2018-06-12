@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//mixins
+
+@mixin star-height {
+  height: 20px;
+  width: 50px;
+  @content;
+}
+
 td {
   border: 1px solid black;
 }
@@ -28,29 +36,35 @@ table {
 }
 
 .one-star {
-  height: 20px;
-  width: 50px;
-  background: image-url("14px-Michelin-1.gif");
-  background-repeat: no-repeat;
-  background-position: center;
+  @include star-height {
+    background: image-url("14px-Michelin-1.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }
 
 .two-star {
-  height: 20px;
-  width: 50px;
-  background: image-url("28px-Michelin-2.gif");
-  background-repeat: no-repeat;
-  background-position: center;
+  @include star-height {
+    background: image-url("28px-Michelin-2.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }
 
 .three-star {
-  height: 20px;
-  width: 50px;
-  background: image-url("42px-Michelin-3.gif");
-  background-repeat: no-repeat;
-  background-position: center;
+  @include star-height {
+    background: image-url("42px-Michelin-3.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }
 
 .restaurant-name:hover {
   background-color: skyblue;
+  cursor: pointer;
+}
+
+.map-container {
+  height: 300px;
+  width: 300px;
 }

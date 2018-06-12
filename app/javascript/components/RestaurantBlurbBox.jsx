@@ -22,13 +22,15 @@ class RestaurantBlurbBox extends React.Component {
 
   render() {
     const {id, name, address, description, stars, closed_status} = this.state.restaurant;
-    const finalClass = this.state.selectedBlurbId === `restaurant-row-${name}-blurb` ? `restaurant-blurb` : `restaurant-blurb hidden`
+    const isSelected = this.state.selectedBlurbId === `restaurant-row-${name}-blurb`;
+    const finalClass = isSelected ? `restaurant-blurb` : `restaurant-blurb hidden`;
     return (
       <tr className={finalClass}
           id={`restaurant-row-${name}-blurb`}>
         <td colSpan={this.state.numCols}>
           <BlurbBoxContent
           restaurant={this.state.restaurant}
+          isSelected={isSelected}
           />
         </td>
       </tr>
