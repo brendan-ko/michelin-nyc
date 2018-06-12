@@ -29,14 +29,17 @@ class RestaurantTable extends React.Component {
   }
 
   render() {
-    console.log(this.state.selectedRow);
     const { startYear, currYear } = this.props;
+    const tableEl = document.getElementById('restaurant-table')
+    const numCols = tableEl ? tableEl.rows[0].cells.length : 0;
+    console.log(numCols);
     const yearRange = rangeArray(startYear, currYear);
     const selectedBlurbId = this.state.selectedRow ? `${this.state.selectedRow.id}-blurb` : null;
     // const selectedBlurb = document.getElementById(selectedBlurbId);
-    // debugger
     return (
-      <table onClick={this.handleSelection}>
+      <table 
+      id='restaurant-table'
+      onClick={this.handleSelection}>
         <tbody>
           <RestaurantRowHeader yearRange={yearRange}/>
             {this.state.restaurants.map( (restaurant) => {
@@ -51,6 +54,7 @@ class RestaurantTable extends React.Component {
                 className={`restaurant-blurb`}
                 restaurant={restaurant}
                 selectedBlurbId={selectedBlurbId}
+                numCols={numCols}
               />
               ];
           })}

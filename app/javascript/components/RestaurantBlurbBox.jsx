@@ -1,18 +1,21 @@
 import React from 'react';
+import BlurbBoxContent from './BlurbBoxContent';
 
 class RestaurantBlurbBox extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       selectedBlurbId: props.selectedBlurbID,
-      restaurant: props.restaurant
+      restaurant: props.restaurant,
+      numCols: props.numCols,
     }
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.selectedBlurbId !== prevProps.selectedBlurbId) {
       this.setState( {
-        selectedBlurbId: this.props.selectedBlurbId
+        selectedBlurbId: this.props.selectedBlurbId,
+        numCols: this.props.numCols
       });
     }
   }
@@ -20,14 +23,14 @@ class RestaurantBlurbBox extends React.Component {
   render() {
     const {id, name, address, description, stars, closed_status} = this.state.restaurant;
     const finalClass = this.state.selectedBlurbId === `restaurant-row-${name}-blurb` ? `restaurant-blurb` : `restaurant-blurb hidden`
-    debugger
     return (
       <tr className={finalClass}
           id={`restaurant-row-${name}-blurb`}>
-        <td>{name}</td>
-        <td>{address}</td>
-        <td>{description}</td>
-        <td>{closed_status}</td>
+        <td colSpan={this.state.numCols}>
+          <BlurbBoxContent
+          restaurant={this.state.restaurant}
+          />
+        </td>
       </tr>
     )
   }

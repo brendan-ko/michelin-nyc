@@ -13,3 +13,12 @@ table {
 .hidden {
   display: none;
 }
+
+.restaurant-blurb {
+  background-color: aquamarine;
+}
+
+.blurb-box {
+  display: flex;
+  justify-content: space-around;
+}
