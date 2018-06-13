@@ -1,6 +1,6 @@
 import React from 'react';
 import RestaurantTable from './RestaurantTable';
-import {rangeArray, nameCheck, yearCheck, closeCheck} from './util_functions';
+import {rangeArray, nameCheck, starYearCheck, closeCheck} from './util_functions';
 
 class RestaurantTableContainer extends React.Component {
   constructor(props) {
@@ -13,6 +13,7 @@ class RestaurantTableContainer extends React.Component {
         name: '',
         year: 'All',
         close: 'All',
+        stars: 'All',
       },
       filteredRestaurants: props.restaurants,
     }
@@ -20,13 +21,15 @@ class RestaurantTableContainer extends React.Component {
   }
 
   handleFilterSubmit() {
-    const {name, year, close} = this.state.filters;
+    const {name, year, close, stars} = this.state.filters;
     const nameInput = name.trim().toLowerCase();
     const nameLength = name.length;
     
+    
     const filteredRestaurants = this.state.restaurants.filter( (restaurant) => {
+      console.log(starYearCheck(restaurant.stars, year, stars));
       if (nameCheck(restaurant.name, nameInput, nameLength) &&
-          yearCheck(restaurant.stars, year) &&
+          starYearCheck(restaurant.stars, year, stars) &&
           closeCheck(restaurant.closed_status, close)) {
             return true;
           }
@@ -64,13 +67,6 @@ class RestaurantTableContainer extends React.Component {
             <label htmlFor="name">Name</label>
             <input type="text" value={this.state.filters.name} onChange={this.update('name')}/>
 
-            <label htmlFor="close">Close?</label>
-            <select className='select-close' value={this.state.filters.close} onChange={this.update('close')}>
-              <option value="All">All</option>
-              <option value="Open">Open Only</option>
-              <option value="Closed">Closed Only</option>
-            </select>
-
             <label htmlFor="year">Year</label>
             <select className='select-year' value={this.state.filters.year} onChange={this.update('year')}>
               <option value="All">All</option>
@@ -79,6 +75,22 @@ class RestaurantTableContainer extends React.Component {
                   <option key={`select-${year}`} value={`${year}`}>{`${year}`}</option>
                 )
               })}
+            </select>
+
+            <label htmlFor="close">Close?</label>
+            <select className='select-close' value={this.state.filters.close} onChange={this.update('close')}>
+              <option value="All">All</option>
+              <option value="Open">Open Only</option>
+              <option value="Closed">Closed Only</option>
+            </select>
+            
+            <label htmlFor="stars">Stars</label>
+            <select className='select-stars' value={this.state.filters.stars} onChange={this.update('stars')}>
+              <option value="All">All</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
             </select>
 
             <button type='button' onClick={this.handleFilterSubmit}>Filter!</button>

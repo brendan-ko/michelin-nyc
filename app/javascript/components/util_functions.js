@@ -45,9 +45,24 @@ export const nameCheck = (restaurantName, nameInput, nameLength) => {
   else return false;
 }
 
-export const yearCheck = (restaurantStars, year) => {
-  if (year === 'All') return true;
-  return restaurantStars[year] ? true : false
+export const starYearCheck = (restaurantStars, year, stars) => {
+  const yearRange = rangeArray(2006, 2018);
+  if (year === 'All') {
+    if (stars === 'All') return true;
+    else if (stars === '0') {
+      return yearRange.every( (yr) => {
+        return restaurantStars[`${yr}`] === undefined;
+      })
+    }
+    else {
+      return yearRange.every( (yr) => {
+        return restaurantStars[`${yr}`] === stars;  
+      })
+    }
+  }
+  else {
+    return restaurantStars[year] === stars ? true : false;
+  }
 }
 
 export const closeCheck = (restaurantClosedStatus, close) => {

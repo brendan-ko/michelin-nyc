@@ -30,7 +30,6 @@ class RestaurantTable extends React.Component {
   }
 
   render() {
-    debugger
     const { startYear, currYear } = this.props;
     const tableEl = document.getElementById('restaurant-table')
     const numCols = tableEl ? tableEl.rows[0].cells.length : 0;
