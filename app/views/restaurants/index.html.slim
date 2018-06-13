@@ -12,24 +12,24 @@ html
     /                     :text => "Hallo Moto"
     h2 React-Rails table below
     div.restaurant-table-div
-      = react_component "RestaurantTable",
+      = react_component "RestaurantTableContainer",
                         :restaurants => @restaurants,
                         :startYear => 2006,
                         :currYear => Time.now.year
-    - start_year = 2006
-    - curr_year = Time.now.year
-    h3 Slim view table below
-    table#restaurants
-      tr
-        td.restaurant-name.restaurant-header Restaurant Name
-        td.restaurant-address.restaurant-header Address
-        td.restaurant-description.restaurant-header Description
-        - for year in (start_year..curr_year)
-          td.restaurant-header class="#{year}" #{year}
-      - for restaurant in @restaurants
-        tr
-          td.restaurant-name = restaurant.name
-          td.restaurant-address = restaurant.address
-          td.restaurant-description = restaurant.description
-          - for year in (start_year..curr_year)
-            td class="#{year}" #{restaurant.stars["#{year}"]}
+    / - start_year = 2006
+    / - curr_year = Time.now.year
+    / h3 Slim view table below
+    / table#restaurants
+    /   tr
+    /     td.restaurant-name.restaurant-header Restaurant Name
+    /     td.restaurant-address.restaurant-header Address
+    /     td.restaurant-description.restaurant-header Description
+    /     - for year in (start_year..curr_year)
+    /       td.restaurant-header class="#{year}" #{year}
+    /   - for restaurant in @restaurants
+    /     tr
+    /       td.restaurant-name = restaurant.name
+    /       td.restaurant-address = restaurant.address
+    /       td.restaurant-description = restaurant.description
+    /       - for year in (start_year..curr_year)
+    /         td class="#{year}" #{restaurant.stars["#{year}"]}
