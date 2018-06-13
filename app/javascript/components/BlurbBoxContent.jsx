@@ -4,7 +4,6 @@ import RestaurantMap from './RestaurantMap';
 const BlurbBoxContent = (props) => {
   const { id, name, address, description, stars, closed_status } = props.restaurant;
   const {isSelected} = props;
-  debugger
   const closedText = closed_status ? 'Closed' : 'Still in operation';
   return (
     <div className='blurb-box'>

@@ -40,19 +40,30 @@ class RestaurantMap extends React.Component {
   }
 
   componentDidMount() {
-    if(this.state.isSelected) {
-      this.renderMap();
+    
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    //need to figure out how to avoid triple render
+    return true;
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.isSelected !== this.props.isSelected) {
+      this.setState( {
+        isSelected: nextProps.isSelected
+      })
     }
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.isSelected !== this.props.isSelected) {
-      this.setState( {
-        isSelected: this.props.isSelected
-      })
-    }
-
-    if (this.state.isSelected) {
+    // if (prevProps.isSelected !== this.props.isSelected) {
+    //   this.setState( {
+    //     isSelected: this.props.isSelected
+    //   })
+    // }
+    
+    if (this.state.isSelected && !prevProps.isSelected) {
       this.renderMap();
     }
   }
