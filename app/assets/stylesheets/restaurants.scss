@@ -1,3 +1,89 @@
-// Place all the styles related to the restaurants controller here.
+// Place all the styles related to the Restaurant controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//mixins
+
+@mixin star-height {
+  height: 20px;
+  width: 50px;
+  @content;
+}
+
+td {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.closed {
+  background-color: lightgrey;
+}
+
+.hidden {
+  display: none;
+}
+
+.restaurant-blurb {
+  background-color: aquamarine;
+}
+
+.blurb-box {
+  display: flex;
+  justify-content: space-around;
+}
+
+//filters
+
+.restaurant-table-filters {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  max-width: 50%;
+}
+
+.filter-form {
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.select-year, .select-close, .select-stars {
+  margin-bottom: 5px;
+}
+
+.one-star {
+  @include star-height {
+    background: image-url("14px-Michelin-1.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.two-star {
+  @include star-height {
+    background: image-url("28px-Michelin-2.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.three-star {
+  @include star-height {
+    background: image-url("42px-Michelin-3.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.restaurant-row:hover {
+  background-color: skyblue;
+  cursor: pointer;
+}
+
+.map-container {
+  min-height: 300px;
+  min-width: 300px;
+}

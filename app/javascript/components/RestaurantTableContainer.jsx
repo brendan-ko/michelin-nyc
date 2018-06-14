@@ -63,7 +63,7 @@ class RestaurantTableContainer extends React.Component {
       <div className='restaurant-table-container'>
         <div className='restaurant-table-filters'>
           <h4>FILTERS</h4>
-          <form>
+          <form className='filter-form'>
             <label htmlFor="name">Name</label>
             <input type="text" value={this.state.filters.name} onChange={this.update('name')}/>
 
