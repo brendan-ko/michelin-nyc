@@ -10,6 +10,18 @@
   @content;
 }
 
+.restaurant-table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.restaurant-table-title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
 td {
   border: 1px solid black;
 }
@@ -27,7 +39,7 @@ table {
 }
 
 .restaurant-blurb {
-  background-color: aquamarine;
+  background-color: lightsteelblue;
 }
 
 .blurb-box {
@@ -35,7 +47,22 @@ table {
   justify-content: space-around;
 }
 
-//filters
+//filter form
+
+.filter-form-div {
+  background-color: lightcoral;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-form-div > h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+}
 
 .restaurant-table-filters {
   display: flex;
@@ -45,13 +72,18 @@ table {
 }
 
 .filter-form {
-  max-width: 50%;
   display: flex;
   flex-direction: column;
 }
 
-.select-year, .select-close, .select-stars {
+.input-name, .select-year, .select-close, .select-stars {
   margin-bottom: 5px;
+}
+
+// table
+
+.restaurant-stars-header {
+  text-align: center;
 }
 
 .one-star {
@@ -83,7 +115,43 @@ table {
   cursor: pointer;
 }
 
+//blurb
+
+.blurb-box {
+  display: flex; 
+}
+
+.blurb-box > div {
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.blurb-box-text {
+  max-width: 500px;
+}
+
+.blurb-box-text > h3 {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.blurb-box-text > p {
+  margin-bottom: 20px;
+}
+
+.blurb-name {
+  font-size: 24px;
+  font-weight: 600;
+  text-decoration: underline;
+  margin-bottom: 20px;
+}
+
+.blurb-description-title {
+  font-weight: 600;
+}
+
 .map-container {
   min-height: 300px;
   min-width: 300px;
+  margin: 5px;
 }

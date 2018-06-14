@@ -61,40 +61,43 @@ class RestaurantTableContainer extends React.Component {
     const yearRange = rangeArray(startYear, currYear);
     return(
       <div className='restaurant-table-container'>
+        <h1 className='restaurant-table-title'>A History of Michelin Starred restaurants in NYC</h1>
         <div className='restaurant-table-filters'>
-          <h4>FILTERS</h4>
-          <form className='filter-form'>
-            <label htmlFor="name">Name</label>
-            <input type="text" value={this.state.filters.name} onChange={this.update('name')}/>
+          <div className='filter-form-div'>
+            <h3>FILTERS</h3>
+            <form className='filter-form'>
+              <label htmlFor="name">Name</label>
+              <input className='input-name' type="text" value={this.state.filters.name} onChange={this.update('name')}/>
 
-            <label htmlFor="year">Year</label>
-            <select className='select-year' value={this.state.filters.year} onChange={this.update('year')}>
-              <option value="All">All</option>
-              {yearRange.map((year) => {
-                return (
-                  <option key={`select-${year}`} value={`${year}`}>{`${year}`}</option>
-                )
-              })}
-            </select>
+              <label htmlFor="year">Year</label>
+              <select className='select-year' value={this.state.filters.year} onChange={this.update('year')}>
+                <option value="All">All</option>
+                {yearRange.map((year) => {
+                  return (
+                    <option key={`select-${year}`} value={`${year}`}>{`${year}`}</option>
+                  )
+                })}
+              </select>
 
-            <label htmlFor="close">Close?</label>
-            <select className='select-close' value={this.state.filters.close} onChange={this.update('close')}>
-              <option value="All">All</option>
-              <option value="Open">Open Only</option>
-              <option value="Closed">Closed Only</option>
-            </select>
-            
-            <label htmlFor="stars">Stars</label>
-            <select className='select-stars' value={this.state.filters.stars} onChange={this.update('stars')}>
-              <option value="All">All</option>
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
+              <label htmlFor="close">Closed?</label>
+              <select className='select-close' value={this.state.filters.close} onChange={this.update('close')}>
+                <option value="All">All Restaurants</option>
+                <option value="Open">Open Only</option>
+                <option value="Closed">Closed Only</option>
+              </select>
+              
+              <label htmlFor="stars">Stars</label>
+              <select className='select-stars' value={this.state.filters.stars} onChange={this.update('stars')}>
+                <option value="All">All</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
 
-            <button type='button' onClick={this.handleFilterSubmit}>Filter!</button>
-          </form>
+              <button type='button' onClick={this.handleFilterSubmit}>Filter!</button>
+            </form>
+          </div>
           
         </div>
         <RestaurantTable

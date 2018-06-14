@@ -4,13 +4,9 @@ html
     title History of Michelin Starred Restaurants in NYC
     = javascript_pack_tag 'application'
     = javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyAcwmzfnziBVMkUCsiv-ay6LEpE4HjftCM"
+    link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet"
   body
-    h1 Restaurant List
-    / test component for functional react component
-    / div.test-jsx
-    /   = react_component "testJSX",
-    /                     :text => "Hallo Moto"
-    h2 React-Rails table below
+    / h1 A History of Michelin Starred restaurants in NYC
     div.restaurant-table-div
       = react_component "RestaurantTableContainer",
                         :restaurants => @restaurants,

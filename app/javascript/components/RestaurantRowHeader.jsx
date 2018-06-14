@@ -7,7 +7,7 @@ const RestaurantRowHeader = (props) => {
       <td className='restaurant-name-header'>Restaurant Name</td>
       {yearRange.map((year) => {
         return (
-          <td key={`${year}header`}>
+          <td key={`${year}header`} className='restaurant-stars-header'>
             {year}
           </td>
         )

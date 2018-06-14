@@ -7,12 +7,14 @@ const BlurbBoxContent = (props) => {
   const closedText = closed_status ? 'Closed' : 'Still in operation';
   return (
     <div className='blurb-box'>
-      <div>
-        <h2>{name}</h2>
-        <h3>{address}</h3>
-        <h3>{closedText}</h3>
-        <h4>Description</h4>
-        <p>{description}</p>
+      <div className='blurb-box-text'>
+        <h2 className='blurb-name'>{name}</h2>
+        <h3 className='blurb-address-title'>Address</h3>
+        <p className='blurb-address'>{address}</p>
+        <h3 className='blurb-closed-text-title'>Status</h3>
+        <p className='blurb-closed-text'>{closedText}</p>
+        <h3 className='blurb-description-title'>Description</h3>
+        <p className='blurb-description'>{description}</p>
       </div>
       <RestaurantMap
         isSelected={isSelected}

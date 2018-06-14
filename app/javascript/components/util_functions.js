@@ -61,7 +61,10 @@ export const starYearCheck = (restaurantStars, year, stars) => {
     }
   }
   else {
-    return restaurantStars[year] === stars ? true : false;
+    if (stars === 'All') return true;
+    else {
+      return restaurantStars[year] === stars ? true : false;
+    }
   }
 }
 
